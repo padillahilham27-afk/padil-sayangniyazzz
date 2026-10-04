@@ -1,0 +1,720 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   BODY
+===================================== */
+
+body {
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #5a3041;
+
+    background:
+        radial-gradient(circle at top left, #ffd6e7, transparent 35%),
+        radial-gradient(circle at bottom right, #ffc4da, transparent 35%),
+        linear-gradient(135deg, #fff0f6, #ffe0eb);
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================
+   BACKGROUND HEARTS
+===================================== */
+
+.hearts {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.heart {
+    position: absolute;
+
+    color: rgba(255, 82, 137, 0.5);
+
+    animation: floatHeart linear forwards;
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(100vh)
+            rotate(0deg)
+            scale(0.5);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-120px)
+            rotate(360deg)
+            scale(1.2);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================
+   OPENING SCREEN
+===================================== */
+
+.screen {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.envelope {
+
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 80px;
+
+    background: rgba(255,255,255,0.55);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 20px 50px rgba(255, 70, 120, 0.2);
+
+    animation: envelopeFloat 2s ease-in-out infinite;
+
+    margin-bottom: 30px;
+}
+
+
+@keyframes envelopeFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+}
+
+
+.screen h1 {
+
+    font-family: "Pacifico", cursive;
+
+    font-size: clamp(40px, 8vw, 75px);
+
+    color: #e84d82;
+
+    margin-bottom: 15px;
+}
+
+
+.screen p {
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+
+    color: #805265;
+}
+
+
+/* =====================================
+   BUTTON
+===================================== */
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    transition: 0.3s;
+}
+
+
+.screen button,
+.popup button {
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    background:
+        linear-gradient(135deg, #ff5c93, #e83e78);
+
+    box-shadow:
+        0 10px 25px rgba(232, 62, 120, 0.3);
+}
+
+
+button:hover {
+
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 15px 30px rgba(232, 62, 120, 0.4);
+}
+
+
+/* =====================================
+   MAIN
+===================================== */
+
+#main {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 70px 20px;
+
+    animation: fadeIn 1s ease;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+.container {
+
+    width: min(900px, 100%);
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.badge {
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    background: rgba(255,255,255,0.65);
+
+    border: 1px solid rgba(255,255,255,0.8);
+
+    border-radius: 50px;
+
+    color: #e84d82;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+}
+
+
+.title {
+
+    font-family: "Pacifico", cursive;
+
+    font-size: clamp(38px, 7vw, 65px);
+
+    line-height: 1.3;
+
+    color: #dc4778;
+
+    margin-bottom: 15px;
+}
+
+
+.subtitle {
+
+    color: #805265;
+
+    margin-bottom: 40px;
+}
+
+
+/* =====================================
+   PHOTO CARD
+===================================== */
+
+.photo-card {
+
+    width: min(600px, 100%);
+
+    margin: auto;
+
+    padding: 12px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 60px rgba(183, 64, 101, 0.2);
+
+    transform: rotate(-1deg);
+
+    transition: 0.4s;
+
+    margin-bottom: 60px;
+}
+
+
+.photo-card:hover {
+
+    transform:
+        rotate(0deg)
+        translateY(-8px);
+}
+
+
+.photo-card img {
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+}
+
+
+.photo-text {
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 20px;
+
+    color: #d94d7b;
+
+    padding: 15px 5px 8px;
+}
+
+
+/* =====================================
+   LETTER
+===================================== */
+
+.letter {
+
+    background:
+        rgba(255,255,255,0.75);
+
+    backdrop-filter: blur(10px);
+
+    padding: 45px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 50px rgba(183,64,101,0.12);
+
+    margin-bottom: 50px;
+}
+
+
+.letter-icon {
+
+    font-size: 45px;
+}
+
+
+.letter h2 {
+
+    margin: 15px 0 25px;
+
+    color: #df4c7c;
+}
+
+
+#typingText {
+
+    min-height: 130px;
+
+    line-height: 2;
+
+    color: #704557;
+}
+
+
+/* =====================================
+   REASONS
+===================================== */
+
+.reasons {
+
+    margin-bottom: 70px;
+}
+
+
+.reasons h2 {
+
+    color: #dc4778;
+
+    margin-bottom: 30px;
+}
+
+
+.reason-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.reason {
+
+    padding: 25px;
+
+    background: rgba(255,255,255,0.65);
+
+    border-radius: 22px;
+
+    text-align: left;
+
+    box-shadow:
+        0 10px 30px rgba(183,64,101,0.08);
+
+    transition: 0.3s;
+}
+
+
+.reason:hover {
+
+    transform: translateY(-7px);
+
+    background: white;
+}
+
+
+.reason span {
+
+    font-size: 30px;
+
+    display: block;
+
+    margin-bottom: 12px;
+}
+
+
+.reason p {
+
+    color: #704557;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   SURPRISE
+===================================== */
+
+.surprise-section {
+
+    padding: 50px 20px;
+
+    margin-bottom: 40px;
+}
+
+
+.surprise-section h2 {
+
+    font-family: "Pacifico", cursive;
+
+    color: #dc4778;
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+
+.surprise-section p {
+
+    color: #805265;
+
+    margin-bottom: 25px;
+}
+
+
+.surprise-button {
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4f8b,
+        #c92d68
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 15px 35px rgba(201,45,104,0.3);
+}
+
+
+/* =====================================
+   POPUP
+===================================== */
+
+.popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(60, 20, 35, 0.55);
+
+    backdrop-filter: blur(8px);
+
+    animation: fadeIn 0.4s ease;
+}
+
+
+.popup-content {
+
+    position: relative;
+
+    width: min(500px, 100%);
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fff0f6
+        );
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.25);
+
+    animation: popupIn 0.5s ease;
+}
+
+
+.close {
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #ffe0ea;
+
+    color: #d94d7b;
+
+    font-size: 25px;
+
+    line-height: 35px;
+}
+
+
+.big-heart {
+
+    font-size: 80px;
+
+    animation: heartBeat 1s infinite;
+}
+
+
+.popup-content h2 {
+
+    font-family: "Pacifico", cursive;
+
+    color: #df4779;
+
+    font-size: 32px;
+
+    margin: 15px 0 20px;
+}
+
+
+.popup-content p {
+
+    color: #704557;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: #9b6275;
+
+    font-size: 13px;
+
+    padding: 20px;
+}
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes popupIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+
+/* =====================================
+   RESPONSIVE HP
+===================================== */
+
+@media (max-width: 600px) {
+
+    #main {
+        padding: 45px 15px;
+    }
+
+    .letter {
+        padding: 30px 20px;
+    }
+
+    .reason-list {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        font-size: 38px;
+    }
+
+    .surprise-section h2 {
+        font-size: 28px;
+    }
+
+}

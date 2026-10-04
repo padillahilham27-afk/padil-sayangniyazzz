@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Untuk Kamu 💗</title>
+
+    <!-- Font dari Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         BACKGROUND HATI
+    =============================== -->
+    <div class="hearts"></div>
+
+
+    <!-- ==============================
+         HALAMAN PEMBUKA
+    =============================== -->
+    <section id="opening" class="screen">
+
+        <div class="envelope">
+            💌
+        </div>
+
+        <h1>Hai, Sayang! 💗</h1>
+
+        <p>
+            Aku punya sesuatu kecil buat kamu...
+        </p>
+
+        <button onclick="openGift()">
+            🎁 Buka Hadiah
+        </button>
+
+    </section>
+
+
+    <!-- ==============================
+         HALAMAN UTAMA
+    =============================== -->
+    <section id="main" class="hidden">
+
+        <div class="container">
+
+            <div class="badge">
+                💕 SPECIAL GIFT FOR YOU 💕
+            </div>
+
+            <h1 class="title">
+                Untuk seseorang<br>
+                yang spesial di hatiku ❤️
+            </h1>
+
+            <p class="subtitle">
+                Ada sesuatu yang ingin aku sampaikan...
+            </p>
+
+
+            <!-- FOTO -->
+            <div class="photo-card">
+
+                <!-- GANTI foto-kalian.jpg DENGAN FOTO KALIAN -->
+                <img src="poto kita.jpeg" alt="Foto kita">
+
+                <div class="photo-text">
+                    📸 Our little moment
+                </div>
+
+            </div>
+
+
+            <!-- PESAN -->
+            <div class="letter">
+
+                <span class="letter-icon">💌</span>
+
+                <h2>Sebuah pesan untukmu</h2>
+
+                <p id="typingText"></p>
+
+            </div>
+
+
+            <!-- ALASAN -->
+            <div class="reasons">
+
+                <h2>Kenapa aku sayang kamu? 🥺</h2>
+
+                <div class="reason-list">
+
+                    <div class="reason">
+                        <span>🌷</span>
+                        <p>Karena kamu selalu berhasil membuat hariku lebih berwarna.</p>
+                    </div>
+
+                    <div class="reason">
+                        <span>🫶</span>
+                        <p>Karena bersamamu, hal sederhana terasa menjadi istimewa.</p>
+                    </div>
+
+                    <div class="reason">
+                        <span>🌙</span>
+                        <p>Karena kamu adalah salah satu alasan aku tersenyum setiap hari.</p>
+                    </div>
+
+                    <div class="reason">
+                        <span>💗</span>
+                        <p>Dan karena... ya, kamu adalah kamu. Itu sudah cukup.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOMBOL KEJUTAN -->
+            <div class="surprise-section">
+
+                <h2>Masih ada satu kejutan... 👀</h2>
+
+                <p>
+                    Tapi kamu harus berani menekan tombol ini.
+                </p>
+
+                <button class="surprise-button" onclick="showSurprise()">
+                    ✨ Klik Aku ✨
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         POPUP KEJUTAN
+    =============================== -->
+    <div id="surprise" class="popup hidden">
+
+        <div class="popup-content">
+
+            <button class="close" onclick="closeSurprise()">
+                ×
+            </button>
+
+            <div class="big-heart">
+                ❤️
+            </div>
+
+            <h2>AKU SAYANG KAMU! 🥹❤️</h2>
+
+            <p>
+                Terima kasih sudah hadir di hidupku.
+                <br><br>
+                Semoga kita bisa terus membuat
+                banyak cerita indah bersama.
+                <br><br>
+                <strong>
+                    I love you, today, tomorrow, and always. 💗
+                </strong>
+            </p>
+
+            <button onclick="sendLove()">
+                💕 Kirim Cinta
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+    <footer>
+        Made with ❤️ just for you.
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
